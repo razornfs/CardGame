@@ -11,12 +11,12 @@ public class PokerGame {
 
     public void play() {
         List<Player> players = table.getPlayers();
-        deck.shuffle();
+        Dealer dealer = new Dealer(players, deck);
+        dealer.giveCards(2);
         while (true) {
             for (Player player : players) {
-                player.giveCard(deck.getTopCard());
+                //reszta implementacji
             }
-            //reszta implementacji
         }
     }
 }
