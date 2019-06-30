@@ -1,19 +1,20 @@
 import java.util.List;
 
 public class Dealer {
-    private List<Player> players;
-    private Deck deck;
+    private Table table;
+    private Deck pokerDeck;
 
-    public Dealer(List<Player> players, Deck deck) {
-        this.players = players;
-        this.deck = deck;
-        deck.shuffle();
+    public Dealer(Table table, Deck pokerDeck) {
+        this.table = table;
+        this.pokerDeck = pokerDeck;
+        pokerDeck.shuffle();
     }
 
     public void giveCards(int amount) {
+        List<Player> players = table.getPlayers();
         for (int i = 0; i < amount; i++) {
             for (Player player : players) {
-                player.giveCard(deck.getTopCard());
+                player.giveCard(pokerDeck.getTopCard());
             }
         }
     }

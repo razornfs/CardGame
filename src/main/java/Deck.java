@@ -1,18 +1,9 @@
 import java.util.List;
 
-public class Deck {
-    List<Card> cards;
+public interface Deck {
+    void shuffle();
 
-    public Deck(List<Card> cards) {
-        this.cards = cards;
-    }
+    Card getTopCard();
 
-    public void shuffle() {
-        // implementacja
-    }
-
-    public Card getTopCard() {
-        // implementacja
-        return null;
-    }
+    List<Card> getTopCards(int n);
 }
